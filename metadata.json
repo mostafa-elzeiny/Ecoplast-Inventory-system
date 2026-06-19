@@ -1,0 +1,6 @@
+{
+  "name": "Eco Plast Inventory",
+  "description": "Enterprise-grade real-time bilingual (English and Arabic) inventory management and warehouse tracking system for Eco Plast.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

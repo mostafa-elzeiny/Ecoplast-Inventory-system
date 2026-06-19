@@ -1,0 +1,90 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "Inventory products tracked by Eco Plast.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "code": { "type": "string" },
+        "nameEn": { "type": "string" },
+        "nameAr": { "type": "string" },
+        "category": { "type": "string" },
+        "unit": { "type": "string" },
+        "quantity": { "type": "number" },
+        "minStock": { "type": "number" },
+        "notes": { "type": "string" },
+        "updatedAt": { "type": "number" },
+        "updatedBy": { "type": "string" }
+      },
+      "required": ["code", "nameEn", "nameAr", "category", "unit", "quantity", "minStock", "updatedAt", "updatedBy"]
+    },
+    "Transaction": {
+      "title": "Transaction",
+      "description": "Stock movement tracking records (Incoming, Outgoing, Adjustments) for a complete audit trail.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "productCode": { "type": "string" },
+        "productNameEn": { "type": "string" },
+        "productNameAr": { "type": "string" },
+        "type": { "type": "string" },
+        "quantity": { "type": "number" },
+        "previousQuantity": { "type": "number" },
+        "newQuantity": { "type": "number" },
+        "refNo": { "type": "string" },
+        "supplierOrReceiver": { "type": "string" },
+        "notes": { "type": "string" },
+        "timestamp": { "type": "number" },
+        "user": { "type": "string" },
+        "userRole": { "type": "string" }
+      },
+      "required": ["productId", "productCode", "productNameEn", "productNameAr", "type", "quantity", "previousQuantity", "newQuantity", "timestamp", "user", "userRole"]
+    },
+    "Category": {
+      "title": "Category",
+      "description": "Available stock categories for classifying products.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nameEn": { "type": "string" },
+        "nameAr": { "type": "string" }
+      },
+      "required": ["nameEn", "nameAr"]
+    },
+    "ActivityLog": {
+      "title": "ActivityLog",
+      "description": "System-wide administrative logs for accountability.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "action": { "type": "string" },
+        "detailsEn": { "type": "string" },
+        "detailsAr": { "type": "string" },
+        "timestamp": { "type": "number" },
+        "user": { "type": "string" },
+        "userRole": { "type": "string" }
+      },
+      "required": ["action", "detailsEn", "detailsAr", "timestamp", "user", "userRole"]
+    }
+  },
+  "firestore": {
+    "products/{productId}": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "Inventory products tracked by Eco Plast."
+    },
+    "transactions/{transactionId}": {
+      "schema": { "$ref": "#/entities/Transaction" },
+      "description": "Stock movement tracking records (Incoming, Outgoing, Adjustments) for a complete audit trail."
+    },
+    "categories/{categoryId}": {
+      "schema": { "$ref": "#/entities/Category" },
+      "description": "Available stock categories for classifying products."
+    },
+    "activity_logs/{logId}": {
+      "schema": { "$ref": "#/entities/ActivityLog" },
+      "description": "System-wide administrative logs for accountability."
+    }
+  }
+}
