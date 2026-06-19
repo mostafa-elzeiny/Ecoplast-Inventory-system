@@ -15,9 +15,9 @@ interface LogoProps {
 export default function Logo({ className = "h-11", showText = true, lang = 'en', isDarkBg = false }: LogoProps) {
   return (
     <div className={`flex items-center gap-3 ${className}`}>
-      {/* Actual uploaded eco logo image replacement */}
+      {/* Actual uploaded eco logo image replacement handled via direct public URL */}
       <img
-        src="/src/assets/images/ecoplast.png"
+        src="https://www.ecoplastegy.com/wp-content/uploads/2018/12/eco-logo-2.png"
         alt="Eco Logo"
         className="h-9 w-auto object-contain select-none rounded-md"
         referrerPolicy="no-referrer"
