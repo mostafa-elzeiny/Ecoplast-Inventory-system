@@ -10,11 +10,15 @@ interface LogoProps {
   showText?: boolean;
   lang?: 'en' | 'ar';
   isDarkBg?: boolean;
+  onClick?: () => void;
 }
 
-export default function Logo({ className = "h-11", showText = true, lang = 'en', isDarkBg = false }: LogoProps) {
+export default function Logo({ className = "h-11", showText = true, lang = 'en', isDarkBg = false, onClick }: LogoProps) {
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
+    <div 
+      className={`flex items-center gap-3 ${className} ${onClick ? 'cursor-pointer hover:opacity-85 active:scale-95 transition-all duration-150' : ''}`}
+      onClick={onClick}
+    >
       {/* Actual uploaded eco logo image replacement handled via direct public URL */}
       <img
         src="https://www.ecoplastegy.com/wp-content/uploads/2018/12/eco-logo-2.png"

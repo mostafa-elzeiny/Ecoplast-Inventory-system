@@ -541,8 +541,8 @@ export default function App() {
       >
         {/* Top brand header section */}
         <div className="p-4 border-b border-slate-100 dark:border-slate-700/60 flex items-center justify-between">
-          {!sidebarCollapsed && <Logo showText={true} lang={lang} isDarkBg={theme === 'dark'} />}
-          {sidebarCollapsed && <Logo showText={false} className="h-8 justify-center mx-auto" isDarkBg={theme === 'dark'} />}
+          {!sidebarCollapsed && <Logo showText={true} lang={lang} isDarkBg={theme === 'dark'} onClick={() => setActiveView('dashboard')} />}
+          {sidebarCollapsed && <Logo showText={false} className="h-8 justify-center mx-auto" isDarkBg={theme === 'dark'} onClick={() => setActiveView('dashboard')} />}
 
           {/* Squeeze collapse button */}
           <button
@@ -633,7 +633,7 @@ export default function App() {
         <header className="sticky top-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md pt-4 pb-3 px-4 md:px-6 z-20 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center select-none">
           <div className="flex items-center gap-2">
             <div className="md:hidden">
-              <Logo showText={false} className="h-7" />
+              <Logo showText={false} className="h-7" onClick={() => setActiveView('dashboard')} />
             </div>
             {/* Context title path */}
             <div className="hidden md:flex items-center gap-1 text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold">
