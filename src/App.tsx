@@ -748,7 +748,7 @@ export default function App() {
             }`}
           >
             <LayoutDashboard className="h-5 w-5" />
-            <span>Dash</span>
+            <span>{lang === 'ar' ? 'الرئيسية' : 'Dash'}</span>
           </button>
           <button
             onClick={() => setActiveView('current_inventory')}
@@ -757,7 +757,7 @@ export default function App() {
             }`}
           >
             <Grid className="h-5 w-5" />
-            <span>Matrix</span>
+            <span>{lang === 'ar' ? 'الكميات' : 'Matrix'}</span>
           </button>
           <button
             onClick={() => setActiveView('products')}
@@ -766,7 +766,7 @@ export default function App() {
             }`}
           >
             <Package className="h-5 w-5" />
-            <span>SKUs</span>
+            <span>{lang === 'ar' ? 'الأصناف' : 'SKUs'}</span>
           </button>
           <button
             onClick={() => setActiveView('stock_in')}
@@ -775,7 +775,7 @@ export default function App() {
             }`}
           >
             <ArrowDownLeft className="h-5 w-5" />
-            <span>In</span>
+            <span>{lang === 'ar' ? 'وارد' : 'In'}</span>
           </button>
           <button
             onClick={() => setActiveView('stock_out')}
@@ -784,7 +784,7 @@ export default function App() {
             }`}
           >
             <ArrowUpRight className="h-5 w-5" />
-            <span>Out</span>
+            <span>{lang === 'ar' ? 'صرف' : 'Out'}</span>
           </button>
         </div>
 
