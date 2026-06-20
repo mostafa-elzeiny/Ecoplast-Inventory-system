@@ -326,7 +326,7 @@ export const translations = {
     categoryNameAr: "اسم نوع البلاستيك بالعربي المبسط",
     editCategory: "تعديل فئة البلاستيك الحالية",
     deleteCategory: "مسح فئة البلاستيك لعدم الحاجة",
-    activeLanguage: "اللغة العربية",
+    activeLanguage: "English UI",
     notifications: "تنبيهات المخزن العاجلة",
     themeToggle: "ألوان وخلفية الشاشة",
     lightMode: "خلفية بيضاء منورة للنهار",
